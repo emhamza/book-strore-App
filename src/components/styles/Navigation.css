@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  background-color: white;
+  padding: 3%;
+}
+
+.header ul {
+  display: flex;
+  gap: 10%;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  color: aqua;
+}

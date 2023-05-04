@@ -1,0 +1,6 @@
+.all-books {
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+  padding: 5%;
+}
