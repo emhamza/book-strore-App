@@ -120,7 +120,7 @@ Example command:
 
 ### Run tests
 
-To run tests, run the following command: npm test
+To run tests, run the following command: npm run start
 Example command:
 
 ```sh

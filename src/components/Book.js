@@ -8,11 +8,11 @@ function Book() {
         <h2>Governing the ungovernables</h2>
         <p>Dr . Ishrat Hussain</p>
         <p>
-          <span>Edit</span>
-          ||
-          <span>Remove</span>
-          ||
-          <span>comment</span>
+          <button type="submit">Edit</button>
+          |
+          <button type="submit">Remove</button>
+          |
+          <button type="submit">comment</button>
         </p>
       </div>
       <div>
