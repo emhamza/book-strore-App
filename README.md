@@ -111,16 +111,16 @@ Install this project with: npm Example commands:
 
 ### Usage
 
-To run the project, execute the following command: npm test
+To run the project, execute the following command: 
 Example command:
 
 ```sh
-   GitHub Pages Server
+   npm run start
 ```
 
 ### Run tests
 
-To run tests, run the following command: npm run start
+To run tests, run the following command: npm test
 Example command:
 
 ```sh
