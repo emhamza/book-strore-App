@@ -25,7 +25,7 @@ function Book({ book }) {
         <p>completed</p>
       </div>
       <div>
-        <p>Crrunt Chapter</p>
+        <p>Current Chapter</p>
         <h3>Chapter 17</h3>
         <button type="submit">Updated Progress</button>
       </div>
