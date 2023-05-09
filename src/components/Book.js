@@ -1,12 +1,14 @@
+import React from 'react';
 import './styles/Book.css';
+import PropTypes from 'prop-types';
 
-function Book() {
+function Book({ book }) {
   return (
-    <div className="all-books">
+    <div key={book.item_id} className="all-books">
       <div>
         <p>Book</p>
-        <h2>Governing the ungovernables</h2>
-        <p>Dr . Ishrat Hussain</p>
+        <h2>{book.title}</h2>
+        <p>{book.author}</p>
         <p>
           <button type="submit">Edit</button>
           |
@@ -26,5 +28,14 @@ function Book() {
     </div>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Book;
