@@ -1,20 +1,24 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './styles/Book.css';
 import PropTypes from 'prop-types';
+import { deleteBook } from '../redux/books/booksSlice';
 
 function Book({ book }) {
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(deleteBook(id));
+  };
+
   return (
-    <div key={book.item_id} className="all-books">
+    <div className="all-books">
       <div>
         <p>Book</p>
         <h2>{book.title}</h2>
         <p>{book.author}</p>
         <p>
-          <button type="submit">Edit</button>
-          |
-          <button type="submit">Remove</button>
-          |
-          <button type="submit">comment</button>
+          <button type="submit" onClick={() => handleDelete(book.item_id)}>Remove</button>
         </p>
       </div>
       <div>
