@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+// import { addBook } from './booksSlice';
 
 const myURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/baseRwDWRkSJaKzrLHhR/books';
 const initialState = {
@@ -60,8 +61,15 @@ const booksSlice = createSlice({
     });
 
     // posting extraReducer goes here
-    builder.addCase(postBook.fulfilled, (state) => {
+    builder.addCase(postBook.fulfilled, (state, { payload }) => {
       state.isLoading = false;
+      // Dispatch the addBook action after the book has been added to the server
+      state.books.push({
+        item_id: payload.item_id,
+        title: payload.title,
+        author: payload.author,
+        category: payload.category,
+      });
     });
     builder.addCase(postBook.rejected, (state, action) => {
       state.isLoading = false;
