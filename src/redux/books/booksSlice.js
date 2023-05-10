@@ -5,7 +5,7 @@ import axios from 'axios';
 const myURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/baseRwDWRkSJaKzrLHhR/books';
 const initialState = {
   books: [],
-  isLoading: Boolean,
+  isLoading: false,
   error: undefined,
 };
 
@@ -52,7 +52,11 @@ const booksSlice = createSlice({
     builder.addCase(getBook.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.books = Object.entries(payload).flatMap(([key, value]) => value.map((book) => ({
-        ...book, item_id: key, progress: 80,
+        ...book,
+        item_id: key,
+        progress: 80,
+        title: book.title,
+        author: book.author,
       })));
     });
     builder.addCase(getBook.rejected, (state, action) => {
@@ -63,7 +67,6 @@ const booksSlice = createSlice({
     // posting extraReducer goes here
     builder.addCase(postBook.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      // Dispatch the addBook action after the book has been added to the server
       state.books.push({
         item_id: payload.item_id,
         title: payload.title,
