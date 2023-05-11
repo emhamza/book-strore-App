@@ -65,14 +65,8 @@ const booksSlice = createSlice({
     });
 
     // posting extraReducer goes here
-    builder.addCase(postBook.fulfilled, (state, { payload }) => {
+    builder.addCase(postBook.fulfilled, (state) => {
       state.isLoading = false;
-      state.books.push({
-        item_id: payload.item_id,
-        title: payload.title,
-        author: payload.author,
-        category: payload.category,
-      });
     });
     builder.addCase(postBook.rejected, (state, action) => {
       state.isLoading = false;

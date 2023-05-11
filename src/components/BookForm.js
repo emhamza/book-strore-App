@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles/BookForm.css';
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { postBook } from '../redux/books/booksSlice';
+import { addBook, postBook } from '../redux/books/booksSlice';
 
 function BookForm() {
   const [title, setTitle] = useState('');
@@ -21,12 +21,14 @@ function BookForm() {
           author,
           category: 'unknown', // typo fixed
         }),
-        // addBook({
-        //   item_id: nanoid(),
-        //   title,
-        //   author,
-        //   category: 'unknown', // typo fixed
-        // }),
+      );
+      dispatch(
+        addBook({
+          item_id: nanoid(),
+          title,
+          author,
+          category: 'unknown', // typo fixed
+        }),
       );
       setError('');
       setTitle('');
