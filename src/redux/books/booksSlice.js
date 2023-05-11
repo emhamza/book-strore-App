@@ -1,27 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+// import { addBook } from './booksSlice';
 
+const myURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/baseRwDWRkSJaKzrLHhR/books';
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
+  isLoading: false,
+  error: undefined,
 };
+
+// for taking books from the bookstore api
+const getBook = createAsyncThunk('book/get', async () => {
+  const books = await axios.get(myURL);
+  return books.data;
+});
+
+// for posting books to the bookstore api
+const postBook = createAsyncThunk('book/post', async (payload) => {
+  const post = await axios.post(myURL, payload);
+  return post.data;
+});
+
+// for posting books to the bookstore api
+const delBook = createAsyncThunk('book/delete', async (payload) => {
+  const delPost = await axios.delete(`${myURL}/${payload}`);
+  return delPost.data;
+});
 
 const booksSlice = createSlice({
   name: 'book',
@@ -41,8 +45,47 @@ const booksSlice = createSlice({
       );
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(getBook.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getBook.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.books = Object.entries(payload).flatMap(([key, value]) => value.map((book) => ({
+        ...book,
+        item_id: key,
+        progress: 80,
+        title: book.title,
+        author: book.author,
+      })));
+    });
+    builder.addCase(getBook.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
+
+    // posting extraReducer goes here
+    builder.addCase(postBook.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(postBook.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
+
+    // Delete extraReducer goes here
+    builder.addCase(delBook.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(delBook.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
+  },
 });
 
 export const { addBook, deleteBook } = booksSlice.actions;
+
+export { getBook, postBook, delBook };
 
 export default booksSlice.reducer;
