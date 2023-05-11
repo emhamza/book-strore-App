@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles/BookForm.css';
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
+import { Button } from 'reactstrap';
 import { addBook, postBook } from '../redux/books/booksSlice';
 
 function BookForm() {
@@ -39,35 +40,47 @@ function BookForm() {
   };
 
   return (
-    <form>
-      <label htmlFor="title-input">
-        Title:
-        <input
-          type="text"
-          id="title-input"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-      </label>
-      <label htmlFor="author-input">
-        Author:
-        <input
-          type="text"
-          id="author-input"
-          value={author}
-          onChange={(event) => setAuthor(event.target.value)}
-        />
-      </label>
-      <button
-        type="button"
-        onClick={() => {
-          handleAdd();
-        }}
-      >
-        Add Book
-      </button>
-      <span>{error}</span>
-    </form>
+    <>
+      <section className="form-sect">
+        <div className="SECT-DIVIDER">
+          <div className="footer-divider" />
+        </div>
+        <h2 className="form-title">ADD NEW BOOK</h2>
+        <form className="FORM">
+          <label htmlFor="title-input">
+            <input
+              className="book-title"
+              placeholder="Book Title"
+              type="text"
+              id="title-input"
+              value={title}
+              onChange={(event) => setTitle(event.target.value)}
+            />
+          </label>
+          <label htmlFor="author-input">
+            <input
+              className="book-author"
+              placeholder="Author"
+              type="text"
+              id="author-input"
+              value={author}
+              onChange={(event) => setAuthor(event.target.value)}
+            />
+          </label>
+          <Button
+            className="form-btn"
+            type="button"
+            onClick={() => {
+              handleAdd();
+            }}
+          >
+            ADD BOOK
+          </Button>
+          <span>{error}</span>
+        </form>
+      </section>
+
+    </>
   );
 }
 

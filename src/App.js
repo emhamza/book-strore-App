@@ -6,12 +6,14 @@ import BookForm from './components/BookForm';
 function App() {
   return (
     <>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<BookList />} />
-        <Route path="/catergory" element={<p>Catergory Text or part gose there</p>} />
-      </Routes>
-      <BookForm />
+      <div className="bookstore-cms">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<BookList />} />
+          <Route path="/category" element={<p>Catergory Text or part gose there</p>} />
+        </Routes>
+        <BookForm />
+      </div>
     </>
   );
 }
