@@ -66,7 +66,9 @@ Bookstore is app that I am going to create using react and redux. I will update 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- Live demo will be available soon.....
+- [<a href="https://bookstore-app-ql62.onrender.com" target="_blank">Online version</a>](#)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -150,8 +152,8 @@ GitHub Pages
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Simple Math Features]**
-- [ ] **[Cakculatot Inclusion]**
+- [ ] **[Functional progress card]**
+- [ ] **[Addition of categories]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
