@@ -1,6 +1,161 @@
+.book-section {
+  background-color: #fafafa;
+  padding-top: 2%;
+  padding-bottom: 0%;
+}
+
 .all-books {
   display: flex;
-  gap: 15%;
+  gap: 25%;
+  padding: 1.5% 2.5%;
+  width: 90%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  border-radius: 2px;
+  margin-left: 5%;
+}
+
+.book-cat {
+  opacity: 0.5;
+  font-family: "Montserrat", serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin: 0;
+}
+
+.BOOK-TITLE {
+  font-family: "RobotoSlab", serif;
+  font-size: 1.775rem;
+  font-weight: bolder;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.BOOK-AUTHOR {
+  font-family: "RobotoSlab", serif;
+  font-size: 0.975rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  margin: 0;
+}
+
+.BOOK-BUTTONS {
+  display: flex;
+  gap: 5%;
+  margin-top: 1.313rem;
+}
+
+.BUTTON-1 {
+  border: none;
+  background: white;
+  font-family: "RobotoSlab", serif;
+  font-size: 0.975rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.vl {
+  border-left: 1px solid #121212;
+  height: 25px;
+  opacity: 0.5;
+  margin: 0 7%;
+}
+
+.main-book-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.PRO-CARD {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.PRO-CONTAINER-CIRCULE {
+  width: 5.625rem;
+  height: 5.625rem;
+  padding: 0.63rem 0.625rem 0.75rem 0.75rem;
+  display: flex;
   justify-content: center;
-  padding: 5%;
+  align-items: center;
+}
+
+.PROGRESS-CIRCULE {
+  position: absolute;
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  transform: rotate(45deg);
+}
+
+.PER-COM,
+.COM {
+  display: block;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #121212;
+  margin: 0;
+}
+
+.COM {
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+.DIVIDER {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 0 3.688rem 0 4.938rem;
+  background-color: #e8e8e8;
+}
+
+.CHAP-CONTAINER {
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+}
+
+.MY-CHAP,
+.MY-CHAP-LABEL {
+  font-family: "RobotoSlab", serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.MY-CHAP-LABEL {
+  font-size: 0.813rem;
+  opacity: 0.5;
+}
+
+.PRO-BUTTON {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 2px;
+  padding: 5% 15%;
 }

@@ -1,21 +1,63 @@
 .header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5%;
   background-color: white;
-  padding: 3%;
+  border-bottom: 1px solid #b7b8bd;
 }
 
 .header ul {
   display: flex;
   gap: 10%;
+  padding-top: 3%;
+  padding-left: 0;
 }
 
-li {
+li,
+a {
   list-style-type: none;
+  text-decoration: none;
+  color: #121212;
 }
 
 h1 {
-  color: aqua;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+  padding: 2% 5%;
+}
+
+.BOOKS,
+.CATEGORIES {
+  font-family: "Montserrat", serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.CATEGORIES {
+  opacity: 0.5;
+}
+
+.USER-ICON {
+  border: #e8e8e8 1px solid;
+  display: flex;
+  height: 2.83rem;
+  width: 2.833rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60%;
+  padding: 5%;
+}
+
+.oval {
+  margin-left: 51%;
+  margin-top: 1.75%;
 }

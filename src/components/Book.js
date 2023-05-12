@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import './styles/Book.css';
 import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
 import { deleteBook, delBook } from '../redux/books/booksSlice';
 
 function Book({ book }) {
@@ -13,24 +14,48 @@ function Book({ book }) {
   };
 
   return (
-    <div className="all-books">
-      <div>
-        <p>Book</p>
-        <h2>{book.title}</h2>
-        <p>{book.author}</p>
-        <p>
-          <button type="submit" onClick={() => handleDelete(book.item_id)}>Remove</button>
-        </p>
+    <section className="book-section">
+      <div className="all-books">
+        <div className="main-book-div">
+          <p className="book-cat">Book</p>
+          <h2 className="BOOK-TITLE">{book.title}</h2>
+          <p className="BOOK-AUTHOR">{book.author}</p>
+          <p className="BOOK-BUTTONS">
+            <button type="submit" className="BUTTON-1">
+              Comment
+            </button>
+            <span className="vl" />
+            <button type="submit" className="BUTTON-1" onClick={() => handleDelete(book.item_id)}>
+              Remove
+            </button>
+            <span className="vl" />
+            <button type="submit" className="BUTTON-1">Edit</button>
+          </p>
+        </div>
+        <div className="PRO-CARD">
+          <div className="PRO-CONTAINER-CIRCULE">
+            <div className="PROGRESS-CIRCULE" />
+          </div>
+          <div>
+            <p className="PER-COM">70%</p>
+            <p className="COM">Completed</p>
+          </div>
+          <div className="DIVIDER" />
+          <div className="CHAP-CONTAINER">
+            <div>
+              <p className="MY-CHAP-LABEL">CURRENT CHAPTER</p>
+              <p className="MY-CHAP">Chapter 17</p>
+            </div>
+            <div>
+              <Button className="PRO-BUTTON">
+                UPDATE PROGRESS
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <p>completed</p>
-      </div>
-      <div>
-        <p>Current Chapter</p>
-        <h3>Chapter 17</h3>
-        <button type="submit">Updated Progress</button>
-      </div>
-    </div>
+    </section>
+
   );
 }
 

@@ -7,9 +7,14 @@
 }
 
 body {
-  height: 100vh;
-  background: #f4f4f4;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
+  background: #f5f6fa;
+}
+
+.bookstore-cms {
+  width: 90%;
+  margin: 5%;
+  height: 100%;
+  border: 2px solid white;
+  box-shadow: 10px 12px 39px 32px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
