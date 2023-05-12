@@ -21,7 +21,7 @@ const postBook = createAsyncThunk('book/post', async (payload) => {
   return post.data;
 });
 
-// for posting books to the bookstore api
+// for deleting books to the bookstore api
 const delBook = createAsyncThunk('book/delete', async (payload) => {
   const delPost = await axios.delete(`${myURL}/${payload}`);
   return delPost.data;
